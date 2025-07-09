@@ -1,97 +1,55 @@
-📄 Power BI Project Report – Blinkit Grocery Sales Dashboard
-1. Project Title
-Blinkit Grocery Sales Analysis Using Power BI
+# 🛒 Blinkit Grocery Sales Dashboard (Power BI Project)
 
-2. Objective
-To perform a comprehensive sales analysis for Blinkit grocery data, covering sales performance, customer behavior, and outlet-specific metrics to help decision-making through interactive visualizations in Power BI.
+This project is a real-time Power BI dashboard built using Blinkit grocery sales data. The aim is to analyze total sales, customer satisfaction, and inventory distribution across various dimensions such as outlet type, location, fat content, item type, and more.
 
-3. Tools Used
-Power BI Desktop
+---
 
-DAX (Data Analysis Expressions)
+## 📌 Project Objectives
 
-Power Query Editor
+- Analyze sales performance across outlet types and sizes
+- Understand the impact of product fat content on sales
+- Track KPIs like Total Sales, Average Sales, Number of Items, and Average Ratings
+- Help stakeholders make data-driven decisions
 
-4. Project Steps Followed
-According to the project flow shown in your screenshot:
+---
 
-Requirement Gathering – Understood business need and KPIs
+## 📁 Dataset Description
 
-Data Walkthrough – Reviewed available data columns and formats
+The dataset includes multiple Excel sheets containing:
 
-Data Connection – Imported Excel dataset
+- `Sales` – Order amount, item type, fat content, outlet type
+- `Outlet Info` – Outlet size, location, type, establishment year
+- `Ratings` – Customer average ratings
 
-Data Cleaning – Removed nulls, changed datatypes, standardized text
+---
 
-Data Modeling – Created relationships between tables using keys
+## 🧠 KPIs Created
 
-Data Processing – Created a Date table and cleaned joins
+- **Total Sales** 💰  
+- **Average Sales** 💵  
+- **Number of Items** 📦  
+- **Average Rating** ⭐  
 
-DAX Calculations – Built calculated columns and custom measures
+---
 
-Dashboard Layouting – Designed layout for filters, KPIs, visuals
+## 📊 Charts and Visualizations
 
-Chart Development – Added various visual types based on need
+| Chart Title | Description | Chart Type |
+|-------------|-------------|------------|
+| Sales by Fat Content | Sales comparison by Low/Regular fat | Donut Chart |
+| Sales by Item Type | Top-performing product types | Bar Chart |
+| Fat Content by Outlet | How outlet types affect fat content sales | Stacked Column |
+| Sales by Establishment Year | Trend by outlet age | Line Chart |
+| Sales by Outlet Size | Comparison across Small/Medium/Large outlets | Pie Chart |
+| Sales by Location | Tier-wise geographic sales distribution | Funnel Map |
+| All Metrics by Outlet Type | Summary metrics across outlets | Matrix Card |
 
-Dashboard Development – Combined all visuals in a single interactive page
+---
 
-Insights Generation – Derived patterns and trends from data
+## 🧮 DAX Measures Used
 
-5. Business Requirements Addressed
-✅ KPI Metrics Required:
-Total Sales – Total revenue from all sales
-
-Average Sales – Revenue per transaction
-
-Number of Items – Total units sold
-
-Average Rating – Customer satisfaction score
-
-✅ Chart Requirements & Objectives:
-S.No	Chart Title	Objective	Chart Type
-1	Total Sales by Fat Content	Analyze impact of fat content	Donut Chart
-2	Total Sales by Item Type	Identify top item types	Bar Chart
-3	Fat Content by Outlet	Compare fat content across outlets	Stacked Column
-4	Total Sales by Outlet Establishment	Analyze performance by outlet age/type	Line Chart
-5	Sales by Outlet Size	Relation between outlet size & sales	Donut/Pie Chart
-6	Sales by Outlet Location	Geo distribution of sales	Funnel Map
-7	All KPIs by Outlet Type	Overall metrics by outlet type	Matrix Table
-
-6. DAX Measures Used
-Measure Name	Description
-Total Sales	SUM of all sales amount
-Average Sales	Total Sales ÷ Total Orders
-No of Items	COUNT of product items
-Average Rating	AVERAGE of customer rating column
-
-7. Visualizations Included
-KPI Cards (Top): Total Sales, Avg Sales, Items, Rating
-
-Slicers (Left Panel): Outlet Location, Size, Item Type
-
-Donut Chart: Fat content breakdown
-
-Bar Chart: Sales by Item Type
-
-Line Chart: Sales trend by establishment year
-
-Funnel Map: Outlet location sales
-
-Matrix Table: All metrics by outlet type (last chart)
-
-8. Key Insights
-🥇 Supermarket Type1 had the highest sales of $279.66K
-
-🍴 Fruits and Veggies sold the most across item types
-
-🟡 Low Fat items dominated in both quantity and sales
-
-🏙️ Tier 3 Locations had higher total sales than Tier 1 and 2
-
-🏢 Medium Outlet Sizes performed better than others
-
-📈 Sales peaked around 2018 in outlet establishment timeline
-
-9. Conclusion
-The Power BI dashboard delivers a complete view of Blinkit's grocery sales based on multiple dimensions like fat content, item type, outlet type, and location. It enables decision-makers to identify strong areas, underperforming segments, and take action to improve future outcomes.
-
+```DAX
+Total Sales = SUM(Sales[Amount])
+Average Sales = AVERAGE(Sales[Amount])
+No of Items = COUNT(Sales[Item ID])
+Average Rating = AVERAGE(Ratings[Rating])
